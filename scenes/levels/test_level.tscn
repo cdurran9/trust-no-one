@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bi0uj31s4mxja"]
 
 [ext_resource type="PackedScene" uid="uid://dygosmml840uk" path="res://scenes/characters/player.tscn" id="1_jbqir"]
+[ext_resource type="PackedScene" uid="uid://byue3m1a287oa" path="res://scenes/objects/interactable_test.tscn" id="2_yautc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y5y0o"]
 albedo_color = Color(0.26323867, 0.57908136, 0.5860235, 1)
@@ -14,3 +15,9 @@ size = Vector3(20, 0.1, 20)
 material = SubResource("StandardMaterial3D_y5y0o")
 
 [node name="Player" parent="." unique_id=888573409 instance=ExtResource("1_jbqir")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=518491460]
+transform = Transform3D(1, 0, 0, 0, 0.23176649, 0.97277147, 0, -0.97277147, 0.23176649, 0, 15.424217, 0)
+
+[node name="InteractableTest" parent="." unique_id=1004146454 instance=ExtResource("2_yautc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.397239, 0.6, 0)

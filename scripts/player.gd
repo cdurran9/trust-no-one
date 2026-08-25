@@ -7,9 +7,11 @@ var input_dir : Vector2
 @export var reverse_y := true
 @export var reverse_x := true
 @export var speed := 5.0
+@export var interact_range := 3.0
 
 @onready var camera_3d = $Head/Camera3D
 @onready var head = $Head
+@onready var interact_raycast = $Head/Camera3D/RayCast3D
 
 func _ready():
 	capture_mouse()
@@ -46,3 +48,4 @@ func capture_mouse():
 func release_mouse():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	mouse_captured = false
+	

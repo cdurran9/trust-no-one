@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dygosmml840uk"]
 
 [ext_resource type="Script" uid="uid://dn26olsq6uk0l" path="res://scripts/player.gd" id="1_rp718"]
+[ext_resource type="Script" uid="uid://dnhth13c23pyo" path="res://scripts/interact.gd" id="2_yewv4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y5y0o"]
 
@@ -18,9 +19,13 @@ shape = SubResource("CapsuleShape3D_y5y0o")
 
 [node name="Head" type="Node3D" parent="." unique_id=1506413379]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7272303, 0)
+script = ExtResource("2_yewv4")
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1411419261]
 transform = Transform3D(1, 0, 0, 0, 0.96640146, 0.2570375, 0, -0.2570375, 0.96640146, 0, 0, -0.17706758)
+
+[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=1902229147]
+target_position = Vector3(0, 0, -3)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1228797613]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

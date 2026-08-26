@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://byue3m1a287oa"]
 
 [ext_resource type="Script" uid="uid://3xxbb5h4pjnx" path="res://scripts/interactable_test.gd" id="1_e1nfs"]
-[ext_resource type="Script" uid="uid://duibrwpiju6us" path="res://scripts/interactable.gd" id="1_uqxgu"]
 [ext_resource type="Material" uid="uid://do6rpxxm5k7s1" path="res://shaders/outline_material.tres" id="2_nvpqm"]
+[ext_resource type="PackedScene" uid="uid://dlnovvpwb5w4w" path="res://scenes/components/interactable.tscn" id="3_nvpqm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y5y0o"]
 
@@ -22,13 +22,4 @@ shape = SubResource("BoxShape3D_y5y0o")
 mesh = SubResource("BoxMesh_y5y0o")
 surface_material_override/0 = SubResource("StandardMaterial3D_nvpqm")
 
-[node name="Interactable" type="Node" parent="." unique_id=1724562683 node_paths=PackedStringArray("interact_text_node")]
-script = ExtResource("1_uqxgu")
-interact_text = "Pick up"
-interact_text_node = NodePath("../InteractText")
-metadata/_custom_type_script = "uid://duibrwpiju6us"
-
-[node name="InteractText" type="Label3D" parent="." unique_id=1779407615]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90742326, 0)
-billboard = 1
-text = "Interact"
+[node name="Interactable" parent="." unique_id=1941778965 instance=ExtResource("3_nvpqm")]

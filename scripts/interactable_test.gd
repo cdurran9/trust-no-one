@@ -5,7 +5,6 @@ var highlight_width := 0
 
 @onready var interactable: Interactable = $Interactable
 @onready var mesh = $MeshInstance3D
-@onready var interact_text = $InteractText
 
 func _ready():
 	interactable.on_interact.connect(handle_interact)
@@ -14,7 +13,6 @@ func _ready():
 	
 func _process(_delta):
 	mat.next_pass.set("shader_parameter/outline_width", highlight_width)
-	interact_text.visible = true if highlight_width == 10 else false
 	if highlight_width == 0: return
 	highlight_width = 0
 	

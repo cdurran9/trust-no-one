@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dlnovvpwb5w4w"]
+
+[ext_resource type="Script" uid="uid://duibrwpiju6us" path="res://scripts/interactable.gd" id="1_4t2mx"]
+
+[node name="Interactable" type="Node3D" unique_id=1941778965]
+script = ExtResource("1_4t2mx")
+interact_text = "Pick up"
+
+[node name="InteractText" type="Label3D" parent="." unique_id=1252132385]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90742326, 0)
+billboard = 1
+text = "Interact"

@@ -12,6 +12,7 @@ var input_dir : Vector2
 @onready var camera_3d = $Head/Camera3D
 @onready var head = $Head
 @onready var interact_raycast = $Head/Camera3D/RayCast3D
+@onready var inventory = $Inventory
 
 func _ready():
 	capture_mouse()
@@ -25,8 +26,10 @@ func _physics_process(delta):
 	input_dir = Input.get_vector("left", "right", "forward", "back")
 	var dir_2d = input_dir.rotated(-head.rotation.y)
 	var dir_3d = Vector3(dir_2d.x, 0, dir_2d.y)
-	velocity.x = dir_3d.x * speed
-	velocity.z = dir_3d.z * speed
+	var weight = calculate_weight()
+	var actual_speed = speed - weight
+	velocity.x = dir_3d.x * actual_speed
+	velocity.z = dir_3d.z * actual_speed
 	move_and_slide()
 	
 func _unhandled_input(event):
@@ -49,3 +52,8 @@ func release_mouse():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	mouse_captured = false
 	
+func calculate_weight() -> float:
+	if inventory.carrying.size() == 0: return 0
+	return inventory.carrying.reduce(func(accum, item: ContrabandItem):
+		return accum + 2 if item.heavy else accum + 1
+	, 0)

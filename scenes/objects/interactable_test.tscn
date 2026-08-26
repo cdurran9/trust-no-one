@@ -2,13 +2,15 @@
 
 [ext_resource type="Script" uid="uid://3xxbb5h4pjnx" path="res://scripts/interactable_test.gd" id="1_e1nfs"]
 [ext_resource type="Script" uid="uid://duibrwpiju6us" path="res://scripts/interactable.gd" id="1_uqxgu"]
+[ext_resource type="Material" uid="uid://do6rpxxm5k7s1" path="res://shaders/outline_material.tres" id="2_nvpqm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y5y0o"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_y5y0o"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bmcky"]
-albedo_color = Color(0.975424, 0.55183315, 0.24849445, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nvpqm"]
+next_pass = ExtResource("2_nvpqm")
+albedo_color = Color(0.863285, 0.48673975, 0.075940944, 1)
 
 [node name="InteractableTest" type="RigidBody3D" unique_id=1004146454]
 script = ExtResource("1_e1nfs")
@@ -18,8 +20,15 @@ shape = SubResource("BoxShape3D_y5y0o")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1203225744]
 mesh = SubResource("BoxMesh_y5y0o")
-surface_material_override/0 = SubResource("StandardMaterial3D_bmcky")
+surface_material_override/0 = SubResource("StandardMaterial3D_nvpqm")
 
-[node name="Interactable" type="Node" parent="." unique_id=1724562683]
+[node name="Interactable" type="Node" parent="." unique_id=1724562683 node_paths=PackedStringArray("interact_text_node")]
 script = ExtResource("1_uqxgu")
+interact_text = "Pick up"
+interact_text_node = NodePath("../InteractText")
 metadata/_custom_type_script = "uid://duibrwpiju6us"
+
+[node name="InteractText" type="Label3D" parent="." unique_id=1779407615]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90742326, 0)
+billboard = 1
+text = "Interact"

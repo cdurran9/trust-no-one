@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ContrabandItem" format=3 uid="uid://c7v4c5qjmnbom"]
+
+[ext_resource type="Script" uid="uid://dctw7issyexm" path="res://scripts/contraband_item.gd" id="1_bd7u5"]
+
+[resource]
+script = ExtResource("1_bd7u5")
+name = "Game Boy"
+value = 12.0
+metadata/_custom_type_script = "uid://dctw7issyexm"

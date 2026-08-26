@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ContrabandItem" format=3 uid="uid://cgga1rfl3agg3"]
+
+[ext_resource type="Script" uid="uid://dctw7issyexm" path="res://scripts/contraband_item.gd" id="1_wpy24"]
+
+[resource]
+script = ExtResource("1_wpy24")
+name = "Flatscreen TV"
+value = 30.0
+heavy = true
+metadata/_custom_type_script = "uid://dctw7issyexm"

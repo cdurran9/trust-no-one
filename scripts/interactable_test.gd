@@ -3,6 +3,8 @@ extends Node
 var mat : Material
 var highlight_width := 0
 
+@export var contraband : ContrabandItem
+
 @onready var interactable: Interactable = $Interactable
 @onready var mesh = $MeshInstance3D
 
@@ -19,5 +21,15 @@ func _process(_delta):
 func show_highlight():
 	highlight_width = 10
 
-func handle_interact():
-	print("I'm the parent, I'll handle this interaction")
+func handle_interact(player: Node3D):
+	var inventory : Inventory
+	for child in player.get_children():
+		if child is Inventory:
+			inventory = child
+			break
+	if inventory == null: return
+	print("Picking up {item}".format({"item": contraband.name}))
+	var added = inventory.add_item(contraband)
+	if not added: return
+	self.visible = false
+	self.process_mode = Node.PROCESS_MODE_DISABLED

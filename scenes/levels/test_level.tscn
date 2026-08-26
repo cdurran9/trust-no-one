@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dygosmml840uk" path="res://scenes/characters/player.tscn" id="1_jbqir"]
 [ext_resource type="PackedScene" uid="uid://byue3m1a287oa" path="res://scenes/objects/interactable_test.tscn" id="2_yautc"]
+[ext_resource type="Resource" uid="uid://c7v4c5qjmnbom" path="res://resources/contraband/gameboy.tres" id="3_v45ci"]
+[ext_resource type="Resource" uid="uid://cgga1rfl3agg3" path="res://resources/contraband/flatscreen_tv.tres" id="4_48ne7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y5y0o"]
 albedo_color = Color(0.26323867, 0.57908136, 0.5860235, 1)
@@ -20,4 +22,9 @@ material = SubResource("StandardMaterial3D_y5y0o")
 transform = Transform3D(1, 0, 0, 0, 0.23176649, 0.97277147, 0, -0.97277147, 0.23176649, 0, 15.424217, 0)
 
 [node name="InteractableTest" parent="." unique_id=1004146454 instance=ExtResource("2_yautc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.397239, 0.6, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -6.397239, 0.37927365, 0)
+contraband = ExtResource("3_v45ci")
+
+[node name="InteractableTest2" parent="." unique_id=123384614 instance=ExtResource("2_yautc")]
+transform = Transform3D(0.6995243, 0, -0.7146088, 0, 1, 0, 0.7146088, 0, 0.6995243, -6.397239, 0.6, -3.8181944)
+contraband = ExtResource("4_48ne7")

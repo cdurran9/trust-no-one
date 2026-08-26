@@ -1,6 +1,6 @@
 class_name Interactable extends Node3D
 
-signal on_interact
+signal on_interact(player: Node3D)
 signal is_highlighted
 
 var text_visible := false
@@ -17,8 +17,8 @@ func _process(_delta):
 	interact_text_node.visible = text_visible
 	text_visible = false
 
-func interact():
-	on_interact.emit()
+func interact(player: Node3D):
+	on_interact.emit(player)
 
 func highlight():
 	text_visible = true

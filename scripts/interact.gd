@@ -11,7 +11,7 @@ func _process(_delta):
 	else:
 		handle_clear_interaction()
 	if Input.is_action_just_pressed("interact") and interaction_target != null:
-		interaction_target.interact()
+		interaction_target.interact(get_parent())
 		
 func handle_interaction():
 	var other = interaction_raycast.get_collider()

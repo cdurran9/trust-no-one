@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dn26olsq6uk0l" path="res://scripts/player.gd" id="1_rp718"]
 [ext_resource type="Script" uid="uid://dnhth13c23pyo" path="res://scripts/interact.gd" id="2_yewv4"]
+[ext_resource type="PackedScene" uid="uid://csjwitrautj8m" path="res://scenes/components/inventory.tscn" id="3_76oj4"]
+[ext_resource type="PackedScene" uid="uid://clr7yoiarpuvk" path="res://scenes/ui/hud.tscn" id="4_dyp2m"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y5y0o"]
 
@@ -31,3 +33,8 @@ target_position = Vector3(0, 0, -3)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_y5y0o")
 surface_material_override/0 = SubResource("StandardMaterial3D_rp718")
+
+[node name="Inventory" parent="." unique_id=944638865 instance=ExtResource("3_76oj4")]
+
+[node name="HUD" parent="." unique_id=1742597532 node_paths=PackedStringArray("inventory") instance=ExtResource("4_dyp2m")]
+inventory = NodePath("../Inventory")

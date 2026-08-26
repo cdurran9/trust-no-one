@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dlil3ixsc43dp"]
+
+[ext_resource type="PackedScene" uid="uid://c6850kcank2eu" path="res://models/fbx_office_desk_03.fbx" id="1_bovvr"]
+[ext_resource type="PackedScene" uid="uid://7t40f4ef1s0y" path="res://models/stylized_vendind_machine2.fbx" id="2_b2cq8"]
+[ext_resource type="PackedScene" uid="uid://xxotsecqttdo" path="res://models/water_cooler.fbx" id="3_b2cq8"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_t4l44"]
+size = Vector3(10, 0.5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t4l44"]
+size = Vector3(10, 0.5, 10)
+
+[node name="Level" type="Node3D" unique_id=579878823]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1957267042]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1535664, 9.470913)
+
+[node name="floor" type="StaticBody3D" parent="." unique_id=2086566951]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25106442, 0)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=1241878965]
+mesh = SubResource("BoxMesh_t4l44")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=531416233]
+shape = SubResource("BoxShape3D_t4l44")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1894303969]
+transform = Transform3D(1, 0, 0, 0, 0.54118806, 0.8409016, 0, -0.8409016, 0.54118806, 0, 10.958505, 0)
+
+[node name="fbx_office_desk_03" parent="." unique_id=527862941 instance=ExtResource("1_bovvr")]
+
+[node name="stylized_vendind_machine2" parent="." unique_id=534387848 instance=ExtResource("2_b2cq8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6990643, 0)
+visible = false
+
+[node name="water_cooler" parent="." unique_id=1051513172 instance=ExtResource("3_b2cq8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.031407595, 0, 1.5022503)

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://b04j6bmhmrf1v"]
+
+[ext_resource type="Script" uid="uid://wnre5k2koxcm" path="res://scripts/npc.gd" id="1_ceaqc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y5y0o"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_y5y0o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bmcky"]
+albedo_color = Color(0.95814353, 0.9153876, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_y5y0o"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_u5aor"]
+radius = 3.0
+
+[node name="NPC" type="CharacterBody3D" unique_id=1888136271]
+script = ExtResource("1_ceaqc")
+sight_range = 6.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=511330343]
+shape = SubResource("CapsuleShape3D_y5y0o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2038944037]
+mesh = SubResource("CapsuleMesh_y5y0o")
+surface_material_override/0 = SubResource("StandardMaterial3D_bmcky")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=960321813]
+transform = Transform3D(0.75, 0, 0, 0, 0.2, 0, 0, 0, 0.5, 0, 0.381, -0.408)
+mesh = SubResource("BoxMesh_y5y0o")
+
+[node name="VisionRange" type="Area3D" parent="." unique_id=1041969196]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VisionRange" unique_id=1308499349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.379, 0)
+shape = SubResource("SphereShape3D_u5aor")

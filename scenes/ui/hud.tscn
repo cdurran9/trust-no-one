@@ -1,6 +1,19 @@
 [gd_scene format=3 uid="uid://clr7yoiarpuvk"]
 
 [ext_resource type="Script" uid="uid://cqdsju4jjovrm" path="res://scripts/hud.gd" id="1_0mwgc"]
+[ext_resource type="Texture2D" uid="uid://cj5v0i4rv643p" path="res://textures/icons/eye-svgrepo-com.svg" id="2_hqnrr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqnrr"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [node name="HUD" type="Control" unique_id=1742597532]
 layout_mode = 3
@@ -18,7 +31,28 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_top = -64.0
-offset_right = 1139.0
+offset_right = 960.0
 grow_vertical = 0
 theme_override_font_sizes/normal_font_size = 36
 text = "You're holding something"
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1444828283]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -104.0
+offset_top = -93.0
+offset_right = -4.0
+offset_bottom = 7.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hqnrr")
+
+[node name="Visibility" type="TextureRect" parent="PanelContainer" unique_id=922824557]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_hqnrr")
+expand_mode = 2

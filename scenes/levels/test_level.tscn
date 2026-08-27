@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://c7v4c5qjmnbom" path="res://resources/contraband/gameboy.tres" id="3_v45ci"]
 [ext_resource type="Resource" uid="uid://cgga1rfl3agg3" path="res://resources/contraband/flatscreen_tv.tres" id="4_48ne7"]
 [ext_resource type="PackedScene" uid="uid://b04j6bmhmrf1v" path="res://scenes/characters/npc.tscn" id="5_48ne7"]
+[ext_resource type="PackedScene" uid="uid://crvr26anynwej" path="res://scenes/objects/trash_chute.tscn" id="6_6xh4u"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y5y0o"]
 albedo_color = Color(0.26323867, 0.57908136, 0.5860235, 1)
@@ -40,3 +41,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.953269, 1, 5.515744)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.157665, 1.2, 0.9541319)
 use_collision = true
 size = Vector3(5.312744, 2.1899414, 0.45117188)
+
+[node name="Trash Chute" parent="." unique_id=625758424 instance=ExtResource("6_6xh4u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9211254, 0.60000134, -7.0737305)

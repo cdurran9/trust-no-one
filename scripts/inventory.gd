@@ -15,3 +15,7 @@ func add_item(item: ContrabandItem) -> bool:
 	has_heavy_item = carrying.any(func(item: ContrabandItem): return item.heavy)
 	inventory_changed.emit(carrying)
 	return true
+
+func empty_inventory():
+	carrying.clear()
+	inventory_changed.emit(carrying)

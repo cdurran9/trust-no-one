@@ -23,3 +23,6 @@ func interact(player: Node3D):
 func highlight():
 	text_visible = true
 	is_highlighted.emit()
+
+func change_text(new_text: String):
+	interact_text_node.text = new_text

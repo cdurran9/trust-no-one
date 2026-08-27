@@ -14,9 +14,9 @@ func _ready():
 		inventory.inventory_changed.connect(handle_inventory_changed)
 	
 func handle_inventory_changed(items: Array[ContrabandItem]):
-	var names = items.map(func(item: ContrabandItem): return item.name) if items.size() > 0 else "nothing"
+	var names = ", ".join(items.map(func(item: ContrabandItem): return item.name)) if items.size() > 0 else "nothing"
 	print(names)
-	test_label.text = "You are carrying {items}".format({"items": ", ".join(names)})
+	test_label.text = "You are carrying {items}".format({"items": names})
 
 func toggle_crouch(is_crouched: bool):
 	visibility.visible = true if is_crouched else false
